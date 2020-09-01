@@ -1,7 +1,7 @@
-#include "state.h"
+#include <state.hpp>
 
 void State::perform() {
-  switch(m_phase) {
+  switch (m_phase) {
     case Phase::ENTRY:
       entry();
       break;
@@ -16,11 +16,10 @@ void State::perform() {
   }
 }
 
-Phase State::getPhase(){
-  return m_phase;
+Phase State::getPhase() const {
+  return this->m_phase;
 }
 
 void State::setPhase(Phase phase) {
-    m_phase = phase;
-    return;
-};
+  this->m_phase = phase;
+}
